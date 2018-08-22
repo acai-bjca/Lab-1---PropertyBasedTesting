@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: org.pdsw.pbt.registry.RegistryTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.155 sec <<< FAILURE! - in org.pdsw.pbt.registry.RegistryTest
+validateRegistryResult(org.pdsw.pbt.registry.RegistryTest)  Time elapsed: 0.12 sec  <<< FAILURE!
+java.lang.AssertionError: Property falsified after 1 example(s) 
+Smallest found falsifying value(s) :-
+Person [name=hola, id=10000000, age=18, gender=MALE, alive=true]
+Other found falsifying value(s) :- 
+
+ 
+Seed was 8472750006265
+	at org.quicktheories.core.ExceptionReporter.falsify(ExceptionReporter.java:43)
+	at org.quicktheories.core.ExceptionReporter.falisification(ExceptionReporter.java:19)
+	at org.quicktheories.impl.TheoryRunner.reportFalsification(TheoryRunner.java:54)
+	at org.quicktheories.impl.TheoryRunner.check(TheoryRunner.java:37)
+	at org.quicktheories.dsl.TheoryBuilder.check(TheoryBuilder.java:132)
+	at org.pdsw.pbt.registry.RegistryTest.validateRegistryResult(RegistryTest.java:14)
+
+validateCertificate(org.pdsw.pbt.registry.RegistryTest)  Time elapsed: 0.035 sec  <<< FAILURE!
+java.lang.AssertionError: Property falsified after 1 example(s) 
+Smallest found falsifying value(s) :-
+Person [name=hola, id=10000000, age=18, gender=MALE, alive=true]
+Other found falsifying value(s) :- 
+
+ 
+Seed was 8472871822310
+	at org.quicktheories.core.ExceptionReporter.falsify(ExceptionReporter.java:43)
+	at org.quicktheories.core.ExceptionReporter.falisification(ExceptionReporter.java:19)
+	at org.quicktheories.impl.TheoryRunner.reportFalsification(TheoryRunner.java:54)
+	at org.quicktheories.impl.TheoryRunner.check(TheoryRunner.java:37)
+	at org.quicktheories.dsl.TheoryBuilder.check(TheoryBuilder.java:132)
+	at org.pdsw.pbt.registry.RegistryTest.validateCertificate(RegistryTest.java:24)
+

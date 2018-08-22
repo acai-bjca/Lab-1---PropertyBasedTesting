@@ -16,6 +16,10 @@ public PBTClassifier declare(String accum) {
     return this;
 }
 
+public PBTClassifier describe() {
+    return null;
+}
+
 public PBTClassifier collect(String accum) {
     declare(accum);
     casesAccumulator.put(accum, casesAccumulator.get(accum) + 1);
