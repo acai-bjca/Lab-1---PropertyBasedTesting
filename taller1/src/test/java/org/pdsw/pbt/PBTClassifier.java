@@ -26,11 +26,7 @@ public PBTClassifier collect(String accum) {
     count++;
     return this;
 }
-/*
-public PBTClassifier describe(String descripcion) {
-    
-}
-*/
+
 public void results() {
     double n = count;
     System.out.println();

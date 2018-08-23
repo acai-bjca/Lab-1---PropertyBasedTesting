@@ -12,7 +12,7 @@ public class PersonGenerator {
     }
     
     private static Gen<Integer> age() {
-    	return integers().from(18).upToAndIncluding(100);
+    	return integers().from(0).upToAndIncluding(100);
     }
     
     private static Gen<Integer> id() {
@@ -20,7 +20,7 @@ public class PersonGenerator {
     }
     
     private static Gen<String> name() {
-    	return strings().basicLatinAlphabet().ofLengthBetween(3, 20);
+    	return strings().basicLatinAlphabet().ofLengthBetween(3, 10);
     }
     
     private static Gen<Gender> genero() {

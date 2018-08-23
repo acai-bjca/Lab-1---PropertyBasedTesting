@@ -8,7 +8,7 @@ import static org.quicktheories.generators.SourceDSL.*;
 public class ClassifierTest {
 
     @Test
-    public void clasificaCorrectamenteUnTriángulo(){
+    public void clasificaCorrectamenteUnTriangulo(){
       Classifier classifier = new Classifier();
       PBTClassifier pbtClassifier = new PBTClassifier("first Test");
 
