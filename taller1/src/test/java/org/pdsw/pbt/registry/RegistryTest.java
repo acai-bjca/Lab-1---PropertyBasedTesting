@@ -17,41 +17,20 @@ public class RegistryTest {
             .check(voter ->  {
             	
             	RegisterResult result = registro.registerVoter(voter);
-            	if (!voter.isAlive()) {
-            		pbtClassifier.collect("Not a valid person");
-					return RegisterResult.INVALID == result;
+            	if(18 <= voter.getAge() && voter.isAlive()) {
+            		pbtClassifier.collect("Valid person");
+					return RegisterResult.VALID == result;
+            	} else if (!voter.isAlive()) {
+            		pbtClassifier.collect("Is Death");
+					return RegisterResult.DECEASED == result;
 				} else if (voter.getAge() < 18) {
+					pbtClassifier.collect("Is younger");
+					return RegisterResult.YOUNGER == result;
+				} else {
 					pbtClassifier.collect("Not a valid person");
 					return RegisterResult.INVALID == result;
-				} else {
-					pbtClassifier.collect("Valid person");
-					return RegisterResult.VALID == result;
 				}
             	            
             });
     }
-
-    @Test
-    public void validateCertificate() {
-    	Registry registro = new Registry();
-    	PBTClassifier pbtClassifier = new PBTClassifier("Test Certification");
-        qt()
-            .forAll(PersonGenerator.persons())
-            .check(voter ->  {
-            	
-            	RegisterResult result = registro.certificado(voter);
-            	
-            	if (!voter.isAlive()) {
-            		pbtClassifier.collect("Not certificated");
-					return RegisterResult.UNCERTIFICATION == result;
-				} else if (voter.getAge() < 18) {
-					pbtClassifier.collect("Not certificated");
-					return RegisterResult.UNCERTIFICATION == result;
-				} else {
-					pbtClassifier.collect("Certificated");
-					return RegisterResult.CERTIFICATION == result;
-				}
-            	
-            });
-        }
 }
